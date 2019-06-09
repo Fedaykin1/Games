@@ -1,0 +1,64 @@
+- La tablette du MJ fait office de server. Celles des joueurs sont les clients. 
+- Les tablettes Clientes communiquent avec la tablette Server (wifidirect)
+- Le MJ cree ou selectionne un senario, ce qui lui donne la liste des PJ et des PNJ
+- Les joueurs selectionnent leur personnage, ce qui provoque la connexion avec le server sur le bon scenario
+- Les joueurs peuvent s'ajouter à un scenario ou se retirer
+
+- L'interface du MJ comprends tous les détails de tous les joueus
+- L'interface du joueur comprends tous les détails de son PJ, ansi que le détails partiels des autres PJ et PNJ
+
+- La sauvegarde des PJ/PNJ et du scenario se fait sur gmail/facebook/AppStore (en live ou différé si pas de connecxion), à partir du serveur.
+
+* L'application se découpe en plusieurs parties :
+- Interface de connexion
+- Interfaces de gestion de personnage (feuille de perso)
+- Interfaces d'actions (combat/manoeuvre/...)
+
+* Un scenario contient :
+- La liste des PJ et toutes leur caractéristiques
+- La liste des PNJ et toutes leur caractéristiques
+Les PJ ne peuvent pas participer à plusieurs scenarii simultanément
+
+* Peut-être remplacer les "Points de Vie" par des "Pourcentage de Vie" (état de santé), ce qui facilite la représentation mentale et l'application de malus.
+Autre avantage, pouvoir donner l'etat de santé d'un monstre au joueur alors qu'on ne donnait jamais ses points de vie.
+
+* Penser à gérer le temps pour la récupération des PVs et l'EXP.
+* Penser à gerer l'équipement, les montures.
+
+* (Peut-etre lancer 3 dés de pourcentage : force, rapidité et précision. cela permettrai de rester dans les capacités physique du pesonnage et éviter les abhérations du genre faire plus de dégats qu'un géant.)
+** Limiter la part de chance dans les manoeuvres et les combats :
+	- La difficulté qu'aura un combattant à toucher son adversaire sera fonction de :
+		* la compétence de l'adversaire en esquive/parade (trouver le meilleurs mouvement en fonction de la situation)
+		* la rapidité à réagir de l'adversaire
+		* sa force relative en cas de parade (la parade tient)
+
+	- La compétence de l'adversaire est influencé par :
+		* sa précision (réussir le bon mouvement)
+
+	- la rapidité de l'adversaire est influencé par :
+		* sa force par rapport au type d'arme manipulé
+	
+	- Le jet de dé influent donc sur la compétence d'attaque/parade/esquive en dégradant ou augmentant l'efficacité du mouvement "jusqu'à un certain point".
+	Peut-être prendre un interval de [-25%,+25%] + [Echec pénalisant /*& réussite critique*/ (à définir)]
+
+
+**** Combats :
+
+- Les dégats sont proportionnelles à la précision, au facteur de déviation du défenseur et à la force :
+	- une attaque précise touchera le point voulut (point mortel) si le facteur de déviation (parade) ne l'a détourne vers une autre zone ou ne l'annule.
+	- le facteur de déviation est sensible à la force de l'attaque et à la rapidité.
+	- l'esquive n'est sensible qu'à la rapidité
+	/!\ La force de l'attaque détermine les dégats infligés "en relation avec la zone touchée "(ex. on ne peut pas faire 50% de PV sur le doigt, par contre le doigt peut-être coupé).
+
+- La description des coups (critiques dans Rolemaster) est fonction :
+	- du type de l'arme
+	- du type de protection
+	- de la zone touchée
+
+**** Catégories de Sorts :
+- Instantanée
+- Avec durée
+- Déclenchement manuel
+- Déclenchement automatique
+- Conscient
+- Inconscient (retention vitale/protection du corps/...)
